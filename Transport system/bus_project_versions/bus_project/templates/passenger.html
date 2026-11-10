@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Passenger Dashboard</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f6f9;
+    }
+
+    .header {
+      background: #1e293b;
+      color: white;
+      padding: 15px 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .dashboard {
+      padding: 15px;
+    }
+
+    .cards {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      flex: 1;
+      min-width: 120px;
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .card p {
+      margin: 5px 0 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    #map {
+      height: 50vh;
+      border-radius: 12px;
+    }
+
+    #etaCard {
+      background: white;
+      margin-top: 15px;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    #etaCard ul {
+      padding-left: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">🚌 Passenger Dashboard</div>
+
+  <div class="dashboard">
+
+    <div class="cards">
+      <div class="card">
+        <h3>Passengers</h3>
+        <p id="count">0</p>
+      </div>
+
+      <div class="card">
+        <h3>Available Seats</h3>
+        <p id="seats">0</p>
+      </div>
+
+      <div class="card">
+        <h3>Occupancy</h3>
+        <p id="occupancy">0%</p>
+      </div>
+    </div>
+
+    <div id="map"></div>
+
+    <div id="etaCard">
+      <h3>📍 Bus Stops & ETA</h3>
+      <ul id="etaList"></ul>
+    </div>
+
+  </div>
+
+  <script src="/static/map.js"></script>
+
+</body>
+</html>

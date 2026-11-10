@@ -1,0 +1,3 @@
+#define BLYNK_TEMPLATE_ID "TMPL320FC92Mx"
+#define BLYNK_TEMPLATE_NAME "SmartMedDispenser"
+#define BLYNK_AUTH_TOKEN "oUbOEjmp16CCl5086GXYbJUNvtGhOkqs"

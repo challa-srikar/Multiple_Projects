@@ -1,0 +1,9 @@
+select esp32 dev board
+
+if rfid tag is not detecting, reconnect the RFID reveiver/reader module and press EN button on esp32
+
+Library name	Author
+Adafruit SSD1306	Adafruit
+Adafruit GFX Library	Adafruit
+
+MFRC522 library by GitHub Community.

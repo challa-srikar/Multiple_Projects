@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Driver Panel</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f6f9;
+    }
+
+    .header {
+      background: #0f172a;
+      color: white;
+      padding: 15px 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 15px;
+    }
+
+    .controls {
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .controls input {
+      padding: 8px;
+      margin: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .controls button {
+      padding: 8px 12px;
+      margin: 5px;
+      border: none;
+      border-radius: 6px;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+    }
+
+    .controls button:hover {
+      background: #1d4ed8;
+    }
+
+    #map {
+      height: 60vh;
+      border-radius: 12px;
+    }
+
+    .status {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">🚍 Driver Control Panel</div>
+
+  <div class="container">
+
+    <div class="controls">
+      <button onclick="syncLocation(true)">📍 GPS Sync</button>
+      <button onclick="recalculateRoute()">🔄 Recalculate</button>
+      <button onclick="resetRoute()">❌ Reset</button>
+      <button onclick="centerMap()">🎯 Center</button>
+
+      <div class="status">
+        <span id="gpsStatus">GPS: idle</span> |
+        <span id="gpsAccuracy">Accuracy: --</span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <input id="startSearch" placeholder="Start location">
+      <button onclick="searchStart()">Search</button>
+    </div>
+
+    <div class="controls">
+      <input id="destSearch" placeholder="Destination">
+      <button onclick="searchDestination()">Search</button>
+      <button onclick="startRoute()">🚀 Start Route</button>
+    </div>
+
+    <p>📍 Click on map to add stops</p>
+
+    <div id="map"></div>
+
+  </div>
+
+  <script src="/static/driver.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Driver Panel</title>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script src="https://cdn.socket.io/4.4.1/socket.io.min.js"></script>
+
+<style>
+
+body{
+font-family:Arial;
+margin:20px;
+}
+
+.row{
+margin-bottom:10px;
+}
+
+input{
+padding:6px;
+width:250px;
+}
+
+button{
+padding:6px 12px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Driver Control Panel</h2>
+
+<div class="row">
+
+<button onclick="syncLocation()">Sync Current Location</button>
+
+<input id="startSearch" placeholder="Search start location">
+
+<button onclick="searchStart()">Search</button>
+
+</div>
+
+<div class="row">
+
+<input id="destSearch" placeholder="Search destination">
+
+<button onclick="searchDestination()">Search</button>
+
+<button onclick="startRoute()">Start Route</button>
+
+</div>
+
+<div id="map" style="height:600px"></div>
+
+<script src="/static/driver.js"></script>
+
+</body>
+</html>
